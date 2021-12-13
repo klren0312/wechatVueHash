@@ -97,7 +97,7 @@ var server = app.listen(28848, function() {
 // 创建菜单
 setWechatMenu()
 async function setWechatMenu() {
-  const state = `wechat`
+  const url = encodeURIComponent(`/#/`)
   const menu = {
     button: [
       {
@@ -106,17 +106,17 @@ async function setWechatMenu() {
           {	
             type:'view',
             name:'测试一',
-            url:`https://open.weixin.qq.com/connect/oauth2/authorize?appid=${appID}&redirect_uri=${BASEURL}&response_type=code&scope=snsapi_base&state=${state}#wechat_redirect`
+            url:`https://open.weixin.qq.com/connect/oauth2/authorize?appid=${appID}&redirect_uri=${BASEURL}${encodeURIComponent(`/#/`)}wechat&response_type=code&scope=snsapi_base&state=111#wechat_redirect`
           },
           {	
             type:'view',
             name:'测试二',
-            url:`https://open.weixin.qq.com/connect/oauth2/authorize?appid=${appID}&redirect_uri=${BASEURL}&response_type=code&scope=snsapi_base&state=${state}#wechat_redirect`
+            url:`https://open.weixin.qq.com/connect/oauth2/authorize?appid=${appID}&redirect_uri=${BASEURL}${encodeURIComponent(`/#/`)}wechat2&response_type=code&scope=snsapi_base&state=111#wechat_redirect`
           },
           {	
             type:'view',
             name:'测试',
-            url:`https://open.weixin.qq.com/connect/oauth2/authorize?appid=${appID}&redirect_uri=${BASEURL2}&response_type=code&scope=snsapi_base&state=${state}#wechat_redirect`
+            url:`https://open.weixin.qq.com/connect/oauth2/authorize?appid=${appID}&redirect_uri=${BASEURL2}&response_type=code&scope=snsapi_base&state=111#wechat_redirect`
           }
         ]
       }
@@ -151,7 +151,7 @@ async function sendTemplateMsg(openid) {
     body: JSON.stringify({
       touser: openid,
       template_id: 'WfcomWPkkbQlvTJXJpzFVWGc14hOeyI23TXgHPST8-I',
-      url: `https://open.weixin.qq.com/connect/oauth2/authorize?appid=${appID}&redirect_uri=${BASEURL}&response_type=code&scope=snsapi_base&state=${state}#wechat_redirect`,
+      url: `https://open.weixin.qq.com/connect/oauth2/authorize?appid=${appID}&redirect_uri=${BASEURL}${encodeURIComponent(`/#/`)}wechat1&response_type=code&scope=snsapi_base&state=${state}#wechat_redirect`,
       data: {
         time: {
           value: new Date().toLocaleString(),
