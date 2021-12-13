@@ -1,0 +1,4 @@
+https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxd5be0fe8e3c48877&redirect_uri=http://95ac-36-7-87-91.ngrok.io&response_type=code&scope=snsapi_base&state=wechat#wechat_redirect
+
+
+https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxd5be0fe8e3c48877&redirect_uri=http://32c2-36-7-87-91.ngrok.io/getCode&response_type=code&scope=snsapi_base&state=wechat#wechat_redirect
